@@ -59,7 +59,7 @@ namespace PhotoWatermarkTool
                 var saveFile = Path.Combine(savePath, fileName);
 
                 var fontFile = config.FontFile;
-                var param = $" -i \"{sourceFile}\" -vf \"drawtext=fontfile='{fontFile}':fontcolor={config.Color}:fontsize={config.FontSize}:text='{config.DrawText}':x={config.X}:y=H-th-100:shadowy=3\" -q:v 1 -movflags use_metadata_tags \"{saveFile}\" -y";
+                var param = $" -i \"{sourceFile}\" -vf \"drawtext=fontfile='{fontFile}':fontcolor={config.Color}:fontsize={config.FontSize}:text='{config.DrawText}':x={config.X}:y=H-th-{config.Y}:shadowy=3\" -q:v 1 -movflags use_metadata_tags \"{saveFile}\" -y";
 
                 ProcessUtil.ExecuteFFmpeg(param);
             }
